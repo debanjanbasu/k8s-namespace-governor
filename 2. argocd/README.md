@@ -19,3 +19,7 @@ kubectl -n argocd patch secret argocd-cluster \
     "admin.password": "bmV3cGFzc3dvcmQyMDIx"
   }}'
 ```
+
+For arm64, unless the base images are fixed, the operator just doesn't work. This would impact deployment of the operator on several cloud vendors
+
+To get around this for now, it would be wise to leverage the helm variant. However, then we lose the option of auto-upgrades.
