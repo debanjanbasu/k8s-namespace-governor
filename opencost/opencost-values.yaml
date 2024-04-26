@@ -4,7 +4,7 @@ opencost:
     costModel:
       description: Custom Arbitrary pricing modified, also can be injected via ConfigMap
       CPU: 0.015
-      RAM: 0.002
+      RAM: 0.00225
       storage: 0.00005479452
       defaultLBPrice: 0.0113,
       internetNetworkEgress: 0.0085
