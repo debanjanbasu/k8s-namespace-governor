@@ -6,7 +6,7 @@ opencost:
       CPU: 0.015
       RAM: 0.00225
       storage: 0.00005479452
-      defaultLBPrice: 0.0113,
+      defaultLBPrice: 0.0113
       internetNetworkEgress: 0.0085
   exporter:
     extraEnv:
