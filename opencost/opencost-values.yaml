@@ -1,0 +1,26 @@
+opencost:
+  customPricing:
+    enabled: true
+    costModel:
+      description: Custom Arbitrary pricing modified, also can be injected via ConfigMap
+      CPU: 0.015
+      RAM: 0.002
+      storage: 0.00005479452
+      defaultLBPrice: 0.0113,
+      internetNetworkEgress: 0.0085
+  exporter:
+    extraEnv:
+      EMIT_KSM_V1_METRICS: false
+      EMIT_KSM_V1_METRICS_ONLY: true
+      LOG_LEVEL: warn #error
+  prometheus:
+    internal:
+      enabled: true
+      serviceName: prometheus-server
+      namespaceName: prometheus
+  ui:
+    enabled: true
+  metrics:
+    serviceMonitor:
+      enabled: true
+      namespace: prometheus
