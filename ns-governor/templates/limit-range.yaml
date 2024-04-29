@@ -21,8 +21,8 @@ spec:
       cpu: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.default.cpu | default "10m" }}
       memory: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.default.memory | default "10Mi" }}
     min:
-      cpu: 0
-      memory: 0
+      cpu: 0m
+      memory: 0Mi
     max:
       # Memory cannot exceed the limits set in the namespace quotas, a pod cannot exceed the budget allocated by the namespace
       memory: {{ min .Values.tenantNamespaceResourceLimits.defaultContainerLimits.max.memory .Values.tenantNamespaceResourceLimits.namespaceQuotas.limits.memory | default "1Gi" }}

@@ -19,7 +19,7 @@ tenantNamespaceResourceLimits:
   namespaceQuotas:
     requests:
       cpu: 50m
-      memory: 256m
+      memory: 256Mi
     # This is not a good pattern to enforce a hard limit on. Pods can always take advantage then of the extra CPU if available.
     # This is disabled from the helm chart itself, and shouldn't work.
     # limits.cpu: 100m

@@ -8,11 +8,11 @@ metadata:
 spec:
   containers:
     - name: test-container
-      image: scratch
+      image: busybox:latest
       resources:
-        # limits:
-        #   memory: 1m
-        # requests:
-        #   cpu: 1m
-        #   memory: 1m
+        limits:
+          memory: 6Mi
+        requests:
+          cpu: 1m
+          memory: 6Mi
   restartPolicy: Never
