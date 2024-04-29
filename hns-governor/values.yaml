@@ -1,4 +1,5 @@
 # Default values for ns-governor.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-rootnamespace: test-ns
+rootTenant: root-tenant
+# Configuration for tenant namespaces and their values

@@ -24,5 +24,3 @@ Also, this post from OpenShift clarifies how it can be used in OpenShift as well
 ```bash
 kubectl krew update && kubectl krew install hns
 ```
-
-
