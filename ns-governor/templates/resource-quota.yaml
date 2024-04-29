@@ -7,7 +7,8 @@ metadata:
   labels:
     kubernetes.io/metadata.name: {{ .Values.rootTenantNamespace }}-resource-quota
     kubernetes.io/created-by: {{ .Chart.Name }}
-    argocd.argoproj.io/sync-wave: 0
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
   name: {{ .Values.rootTenantNamespace }}-resource-quota
   namespace: {{ .Values.rootTenantNamespace }}
 spec:

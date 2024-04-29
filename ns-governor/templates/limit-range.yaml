@@ -8,7 +8,8 @@ metadata:
   labels:
     kubernetes.io/metadata.name: {{ .Values.rootTenantNamespace }}-limit-range
     kubernetes.io/created-by: {{ .Chart.Name }}
-    argocd.argoproj.io/sync-wave: 0
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
   name: {{ .Values.rootTenantNamespace }}-limit-range
   namespace: {{ .Values.rootTenantNamespace }}
 spec:

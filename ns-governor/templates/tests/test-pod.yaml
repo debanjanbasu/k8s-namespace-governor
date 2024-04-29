@@ -10,9 +10,9 @@ spec:
     - name: test-container
       image: scratch
       resources:
-        limits:
-          cpu: 1000m
-          memory: 1Gi
-        requests:
-          cpu: 500m
-          memory: 500Mi
+        # limits:
+        #   memory: 1m
+        # requests:
+        #   cpu: 1m
+        #   memory: 1m
+  restartPolicy: Never
