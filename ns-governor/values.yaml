@@ -1,0 +1,25 @@
+# Default values for ns-governor.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+rootTenantNamespace: root-tenant
+# Configuration for tenant namespaces and their values
+tenantNamespaceResourceLimits:
+  defaultContainerLimits:
+    defaultRequest:
+      cpu: 1m
+      memory: 4Mi
+    default:
+      cpu: 10m
+      memory: 10Mi
+    max:
+      cpu: 100m
+      memory: 1Gi
+  namespaceQuotas:
+    requests:
+      cpu: 50m
+      memory: 256m
+    # This is not a good pattern to enforce a hard limit on. Pods can always take advantage then of the extra CPU if available.
+    # This is disabled from the helm chart itself, and shouldn't work.
+    # limits.cpu: 100m
+    limits:
+      memory: 1Gi

@@ -1,6 +1,6 @@
 apiVersion: v2
-name: hns-governor
-description: A Helm chart for Kubernetes hierarchial Namespace Creation
+name: ns-governor
+description: A Helm chart for Kubernetes Namespace Creation
 
 # A chart can be either an 'application' or a 'library' chart.
 #

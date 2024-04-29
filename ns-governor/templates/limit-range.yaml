@@ -1,0 +1,27 @@
+# Configure Default Memory, CPU Requests and Limits for a Namespace
+# https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/
+# https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/
+
+apiVersion: v1
+kind: LimitRange
+metadata:
+  labels:
+    kubernetes.io/metadata.name: {{ .Values.rootTenantNamespace }}-limit-range
+    kubernetes.io/created-by: {{ .Chart.Name }}
+  name: {{ .Values.rootTenantNamespace }}-limit-range
+  namespace: {{ .Values.rootTenantNamespace }}
+spec:
+  limits:
+  - defaultRequest:
+      cpu: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.defaultRequest.cpu }}
+      memory: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.defaultRequest.memory }}
+    default:
+      cpu: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.default.cpu }}
+      memory: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.default.memory }}
+    min:
+      cpu: 0
+      memory: 0
+    max:
+      cpu: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.max.cpu }}
+      memory: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.max.memory }}
+    type: Container
