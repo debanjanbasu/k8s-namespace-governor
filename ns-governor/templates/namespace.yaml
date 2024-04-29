@@ -4,4 +4,5 @@ metadata:
   labels:
     kubernetes.io/metadata.name: {{ .Values.rootTenantNamespace }}
     kubernetes.io/created-by: {{ .Chart.Name }}
+    argocd.argoproj.io/sync-wave: -1
   name: {{ .Values.rootTenantNamespace }}

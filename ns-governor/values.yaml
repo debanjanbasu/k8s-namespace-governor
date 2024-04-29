@@ -12,7 +12,9 @@ tenantNamespaceResourceLimits:
       cpu: 10m
       memory: 10Mi
     max:
-      cpu: 100m
+      # It's not a good practice to limit the CPU request of a container
+      # This is disabled from the helm chart itself, and shouldn't work.
+      # cpu: 100m
       memory: 1Gi
   namespaceQuotas:
     requests:

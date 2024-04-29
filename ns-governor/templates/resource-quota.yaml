@@ -7,12 +7,13 @@ metadata:
   labels:
     kubernetes.io/metadata.name: {{ .Values.rootTenantNamespace }}-resource-quota
     kubernetes.io/created-by: {{ .Chart.Name }}
+    argocd.argoproj.io/sync-wave: 0
   name: {{ .Values.rootTenantNamespace }}-resource-quota
   namespace: {{ .Values.rootTenantNamespace }}
 spec:
   hard:
-    requests.cpu: {{ .Values.tenantNamespaceResourceLimits.namespaceQuotas.requests.cpu }}
-    requests.memory: {{ .Values.tenantNamespaceResourceLimits.namespaceQuotas.requests.memory }}
+    requests.cpu: {{ .Values.tenantNamespaceResourceLimits.namespaceQuotas.requests.cpu | default "50m" }}
+    requests.memory: {{ .Values.tenantNamespaceResourceLimits.namespaceQuotas.requests.memory | default "256m"}}
     # This is not a good pattern to enforce a hard limit on. Pods can always take advantage then of the extra CPU if available.
     # limits.cpu: "2"
-    limits.memory: {{ .Values.tenantNamespaceResourceLimits.namespaceQuotas.limits.memory }}
+    limits.memory: {{ .Values.tenantNamespaceResourceLimits.namespaceQuotas.limits.memory | default "1Gi" }}

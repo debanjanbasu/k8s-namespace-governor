@@ -8,20 +8,21 @@ metadata:
   labels:
     kubernetes.io/metadata.name: {{ .Values.rootTenantNamespace }}-limit-range
     kubernetes.io/created-by: {{ .Chart.Name }}
+    argocd.argoproj.io/sync-wave: 0
   name: {{ .Values.rootTenantNamespace }}-limit-range
   namespace: {{ .Values.rootTenantNamespace }}
 spec:
   limits:
   - defaultRequest:
-      cpu: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.defaultRequest.cpu }}
-      memory: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.defaultRequest.memory }}
+      cpu: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.defaultRequest.cpu | default "1m" }}
+      memory: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.defaultRequest.memory | default "4Mi" }}
     default:
-      cpu: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.default.cpu }}
-      memory: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.default.memory }}
+      cpu: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.default.cpu | default "10m" }}
+      memory: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.default.memory | default "10Mi" }}
     min:
       cpu: 0
       memory: 0
     max:
-      cpu: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.max.cpu }}
-      memory: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.max.memory }}
+      # Memory cannot exceed the limits set in the namespace quotas, a pod cannot exceed the budget allocated by the namespace
+      memory: {{ min .Values.tenantNamespaceResourceLimits.defaultContainerLimits.max.memory .Values.tenantNamespaceResourceLimits.namespaceQuotas.limits.memory | default "1Gi" }}
     type: Container
