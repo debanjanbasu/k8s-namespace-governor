@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata.name: {{ .Values.rootnamespace }}
+    kubernetes.io/created-by: {{ include hns-governor.name }}
+  name: {{ .Values.rootnamespace }}
+spec:
+  hard:
+    requests.cpu: 1
+    requests.memory: 1Gi
+    # This is not a good pattern to enforce a hard limit on. Pods can always take advantage then of the extra CPU if available.
+    # limits.cpu: "2"
+    limits.memory: 2Gi
+  limits:
+    - default:
+        cpu: 1m
+        memory: 4Mi
+      defaultRequest:
+        cpu: 1m
+        memory: 4Mi
+      type: Container
+
+
+
+
+
+
+
