@@ -22,12 +22,14 @@ spec:
           prune: true
           selfHeal: true
       source:
-        chart: ns-governor
-        repoURL: https://debanjanbasu.github.io/k8s-namespace-governor
-        targetRevision: 1.1.1
-        # helm:
-        #   valueFiles:
-        #   - '{{filepath}}'
+        # chart: ns-governor
+        repoURL: https://github.com/debanjanbasu/k8s-namespace-governor.git
+        path: ns-governor
+        targetRevision: HEAD
+        helm:
+          valueFiles:
+          # Move one level up to the parent directory
+          - '../{{.path.path}}/{{.path.filenameNormalized}}'
       destination:
         server: 'https://kubernetes.default.svc'
         namespace: argocd
