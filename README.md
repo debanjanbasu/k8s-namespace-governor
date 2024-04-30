@@ -7,20 +7,27 @@ This is a simple project to demonstrate creation of various namespaces using CNC
 - OpenCost (Install with in-built Prometheus or use external)
 - ArgoCD
 
-## Key goals
-
-- Simple
-- OSS and CNCF conformance
-- As much Automation as possible
-- Cost Estimates and FinOps built-in
-- Default resouce requests and limits setup
-
 ## Roles
+
 For future purpose, a good starting point is to create specific roles which would allow Administrators and Developers to have different levels of access to the namespace. Future roles can be added as required.
 
 [Reference Enterprise Multi-tenancy](https://cloud.google.com/kubernetes-engine/docs/concepts/multitenancy-overview#enterprise_multi-tenancy)
 
-### Initial roles to start with:
+### Initial roles to start with
 
 - Namespace Administrator
 - Developer
+
+## Usage
+
+Documenting the steps to get it running on your cluster
+
+### ns-governor
+
+This is the main helm chart that configures each namespace, resources, limits, roles, and much more coming. Please refer to the [README.md](./ns-governor/README.md) inside the folder ns-governor for its documentation. However we're going to consume it via ArgoCD ApplicationSet for our purposes.
+
+### argocd
+
+ArgoCD is configured via the ApplicationSet. Please refer to the [README.md](./argocd/README.md) inside the folder argocd for its documentation.
+
+### projects
