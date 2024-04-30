@@ -28,4 +28,4 @@ jobs:
           # This is to override the default /charts directory
           charts_dir: .
         env:
-          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          CR_TOKEN: "${{secrets.GITHUB_TOKEN}}"
