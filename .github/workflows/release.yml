@@ -1,9 +1,10 @@
-name: Release Charts
+name: Release Helm Charts 🚀 to Github Pages
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   release:
