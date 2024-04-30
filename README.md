@@ -2,7 +2,12 @@
 
 This is a simple project to demonstrate creation of various namespaces using CNCF native tooling
 
-Key goals:
+## Pre-requisites
+
+- OpenCost (Install with in-built Prometheus or use external)
+- ArgoCD
+
+## Key goals
 
 - Simple
 - OSS and CNCF
