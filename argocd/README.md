@@ -1,0 +1,1 @@
+# This hosts a sample configuration for an ApplicationSet
