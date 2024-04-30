@@ -6,4 +6,5 @@ Key goals:
 
 - Simple
 - OSS and CNCF
-- Max Automation
+- As much Automation as possible
+- Workflow for Cost Estimates
