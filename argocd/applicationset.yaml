@@ -24,7 +24,7 @@ spec:
       source:
         chart: ns-governor
         repoURL: https://debanjanbasu.github.io/k8s-namespace-governor
-        targetRevision: HEAD
+        targetRevision: 1.1.1
         # helm:
         #   valueFiles:
         #   - '{{filepath}}'
