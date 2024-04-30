@@ -25,6 +25,6 @@ jobs:
         uses: helm/chart-releaser-action@v1.6.0
         with:
           # This is to override the default /charts directory
-          charts_dir: ns-governor
+          charts_dir: .
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
