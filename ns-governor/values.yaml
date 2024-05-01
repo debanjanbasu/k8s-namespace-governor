@@ -8,9 +8,6 @@ additional:
   annotations: {}
   namespaceLabels: {}
 adminGroups: []
-cluster:
-  # -- The name of the cluster where the tenant namespaces will be created
-  name: kubernetes.default.svc
 # Configuration for tenant namespaces and their values
 tenantNamespaceResourceLimits:
   defaultContainerLimits:

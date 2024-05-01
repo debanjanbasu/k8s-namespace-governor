@@ -31,5 +31,5 @@ spec:
             # Move one level up to the parent directory
             - "../{{.path.path}}/{{.path.filenameNormalized}}"
       destination:
-        server: "https://kubernetes.default.svc"
+        server: '{{.destinationServerName}}'
         namespace: argocd
