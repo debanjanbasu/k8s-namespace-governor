@@ -1,6 +1,7 @@
 # k8s-namespace-governor
 
 This is a simple project to demonstrate creation of various namespaces using CNCF native tooling
+![ArgoCD Example](./images/argo-sample.png)
 
 ## Pre-requisites
 
