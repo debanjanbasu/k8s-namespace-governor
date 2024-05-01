@@ -1,6 +1,6 @@
 # k8s-namespace-governor
 
-This is a simple project to demonstrate creation of various namespaces using CNCF native tooling
+This is a simple project to demonstrate creation of various namespaces using CNCF native tooling. The goal is to provide a simplified experience for multi-tenancy.
 ![ArgoCD Example](./images/argo-sample.png)
 ![Argo Deployed Resources](./images/argo-deployed-resources.png)
 
