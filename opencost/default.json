@@ -1,0 +1,11 @@
+{
+    "provider": "custom",
+    "description": "Default prices based on dummy data",
+    "CPU": 0.015,
+    "RAM": 0.00225,
+    "storage": 0.00005479452,
+    "defaultLBPrice": 0.0113,
+    "zoneNetworkEgress": "0.01",
+    "regionNetworkEgress": "0.01",
+    "internetNetworkEgress": 0.0085
+}

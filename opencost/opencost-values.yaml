@@ -3,6 +3,7 @@ opencost:
     enabled: true
     costModel:
       description: Custom Arbitrary pricing modified, also can be injected via ConfigMap
+      # These values would override  values defined by the default configmap
       CPU: 0.015
       RAM: 0.00225
       storage: 0.00005479452
