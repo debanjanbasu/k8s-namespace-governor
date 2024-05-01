@@ -14,7 +14,7 @@ spec:
           - path: "projects/**/*.yaml"
   template:
     metadata:
-      name: "{{.path.basenameNormalized}}-k8s-governor-config"
+      name: '{{.path.basenameNormalized}}-{{ index (splitList "." .path.filenameNormalized) 0 }}-k8s-governor-config'
     spec:
       project: ns-governor
       syncPolicy:
