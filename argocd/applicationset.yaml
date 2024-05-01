@@ -7,16 +7,16 @@ spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
   generators:
-  - git:
-      repoURL: https://github.com/debanjanbasu/k8s-namespace-governor.git
-      revision: HEAD
-      files:
-      - path: "projects/**/values.yaml"
+    - git:
+        repoURL: https://github.com/debanjanbasu/k8s-namespace-governor.git
+        revision: HEAD
+        files:
+          - path: "projects/**/values.yaml"
   template:
     metadata:
-      name: '{{.path.basenameNormalized}}-k8s-governor-config'
+      name: "{{.path.basenameNormalized}}-k8s-governor-config"
     spec:
-      project: default
+      project: ns-governor
       syncPolicy:
         automated:
           prune: true
@@ -28,8 +28,8 @@ spec:
         targetRevision: HEAD
         helm:
           valueFiles:
-          # Move one level up to the parent directory
-          - '../{{.path.path}}/{{.path.filenameNormalized}}'
+            # Move one level up to the parent directory
+            - "../{{.path.path}}/{{.path.filenameNormalized}}"
       destination:
-        server: 'https://kubernetes.default.svc'
+        server: "https://kubernetes.default.svc"
         namespace: argocd
