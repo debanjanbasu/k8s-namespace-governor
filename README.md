@@ -33,3 +33,10 @@ This is the main helm chart that configures each namespace, resources, limits, r
 ArgoCD is configured via the ApplicationSet. Please refer to the [README.md](./argocd/README.md) inside the folder argocd for its documentation.
 
 ### projects
+
+The projects folder contains the override values.yaml files for each instance of ns-governor. A sample config might look like:
+
+```yaml
+rootTenantNamespace: a97823-ns
+destinationServerName: https://kubernetes.default.svc
+```
