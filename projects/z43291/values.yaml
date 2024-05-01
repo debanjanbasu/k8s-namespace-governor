@@ -1,2 +1,2 @@
 rootTenantNamespace: z43291-ns
-destinationServerName: https://kubernetes.default.svc
+destinationServer: https://kubernetes.default.svc
