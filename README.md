@@ -2,6 +2,7 @@
 
 This is a simple project to demonstrate creation of various namespaces using CNCF native tooling
 ![ArgoCD Example](./images/argo-sample.png)
+![Argo Deployed Resources](./images/argo-deployed-resources.png)
 
 ## Pre-requisites
 
