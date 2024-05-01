@@ -11,4 +11,4 @@ jobs:
       - name: Generate values schema json
         uses: losisin/helm-values-schema-json-action@v1
         with:
-          input: /ns-governor/values.yaml
+          input: ns-governor/values.yaml
