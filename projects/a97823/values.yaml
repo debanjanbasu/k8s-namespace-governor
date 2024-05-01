@@ -1,2 +1,2 @@
 rootTenantNamespace: a97823-ns
-destinationServerName: in-cluster
+destinationServerName: https://kubernetes.default.svc
