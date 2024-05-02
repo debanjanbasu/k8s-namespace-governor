@@ -3,6 +3,16 @@ entries:
   ns-governor:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2024-05-02T00:49:19.175085744Z"
+    description: A Helm chart for Kubernetes Namespace Creation
+    digest: ec5b347524293342a74ce4446af21068dc7c0262ba87e1df506fdf4e67f46168
+    name: ns-governor
+    type: application
+    urls:
+    - https://github.com/debanjanbasu/k8s-namespace-governor/releases/download/ns-governor-1.1.4/ns-governor-1.1.4.tgz
+    version: 1.1.4
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2024-05-01T01:41:02.08365827Z"
     description: A Helm chart for Kubernetes Namespace Creation
     digest: 60fb050b308e95fa41fbcde89421762fc1fd0a235868a1b928ea109f6743fbe6
@@ -21,4 +31,4 @@ entries:
     urls:
     - https://github.com/debanjanbasu/k8s-namespace-governor/releases/download/ns-governor-1.1.2/ns-governor-1.1.2.tgz
     version: 1.1.2
-generated: "2024-05-01T01:41:02.083671565Z"
+generated: "2024-05-02T00:49:19.175108086Z"
