@@ -21,7 +21,7 @@
         "adminGroups": {
             "type": "array"
         },
-        "rootTenantNamespace": {
+        "namespace": {
             "type": "string"
         },
         "tenantNamespaceResourceLimits": {

@@ -12,7 +12,7 @@ A Helm chart for Kubernetes Namespace Creation
 | additional.labels | object | `{}` |  |
 | additional.namespaceLabels | object | `{}` |  |
 | adminGroups | list | `[]` |  |
-| rootTenantNamespace | string | `"root-tenant"` | The name of the namespace where the tenant namespaces will be created |
+| namespace | string | `"root-tenant"` | The name of the namespace where the tenant namespaces will be created |
 | tenantNamespaceResourceLimits.defaultContainerLimits.default.cpu | string | `"10m"` | The default CPU limit for a container if not defined (millicpu) |
 | tenantNamespaceResourceLimits.defaultContainerLimits.default.memory | string | `"10Mi"` | The default Memory limit for a container if not defined |
 | tenantNamespaceResourceLimits.defaultContainerLimits.defaultRequest.cpu | string | `"1m"` | The default CPU request for a container if not defined (millicpu) |

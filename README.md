@@ -37,6 +37,6 @@ ArgoCD is configured via the ApplicationSet. Please refer to the [README.md](./a
 The projects folder contains the override values.yaml files for each instance of ns-governor. A sample config might look like:
 
 ```yaml
-rootTenantNamespace: a97823-ns
+namespace: a97823-ns
 destinationServerName: https://kubernetes.default.svc
 ```
