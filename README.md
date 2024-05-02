@@ -1,5 +1,7 @@
 # k8s-namespace-governor
 
+<p style="color:orange">Support for HNS is to come in the future.</p>
+
 This is a simple project to demonstrate creation of various namespaces using CNCF native tooling. The goal is to provide a simplified experience for multi-tenancy.
 ![ArgoCD Example](./images/argo-sample.png)
 ![Argo Deployed Resources](./images/argo-deployed-resources.png)
