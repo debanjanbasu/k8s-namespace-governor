@@ -1,14 +1,1 @@
 destinationServer: https://kubernetes.default.svc
-tenantNamespaceResourceLimits:
-  namespaceQuotas:
-    requests:
-      # -- Across all pods in a non-terminal state, the sum of CPU requests cannot exceed this value.
-      cpu: 50m
-      # -- Across all pods in a non-terminal state, the sum of memory requests cannot exceed this value.
-      memory: 1Gi
-    # This is not a good pattern to enforce a hard limit on. Pods can always take advantage then of the extra CPU if available.
-    # This is disabled from the helm chart itself, and shouldn't work.
-    # limits.cpu: 100m
-    limits:
-      # -- Across all pods in a non-terminal state, the sum of memory limits cannot exceed this value.
-      memory: 1Gi
