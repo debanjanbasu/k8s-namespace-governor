@@ -11,8 +11,8 @@ spec:
       image: busybox:latest
       resources:
         limits:
-          memory: {{ min .Values.tenantNamespaceResourceLimits.defaultContainerLimits.max.memory .Values.tenantNamespaceResourceLimits.namespaceQuotas.limits.memory | default "1Gi" }}
+          memory: {{ min .Values.defaultContainerLimits.max.memory .Values.namespaceQuotas.limits.memory | default "1Gi" }}
         requests:
-          cpu: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.default.cpu | default "10m" }}
-          memory: {{ min .Values.tenantNamespaceResourceLimits.defaultContainerLimits.max.memory .Values.tenantNamespaceResourceLimits.namespaceQuotas.limits.memory | default "1Gi" }}
+          cpu: {{ .Values.defaultContainerLimits.default.cpu | default "10m" }}
+          memory: {{ min .Values.defaultContainerLimits.max.memory .Values.namespaceQuotas.limits.memory | default "1Gi" }}
   restartPolicy: Never

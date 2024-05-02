@@ -9,33 +9,37 @@ additional:
   namespaceLabels: {}
 adminGroups: []
 # Configuration for tenant namespaces and their values
-tenantNamespaceResourceLimits:
-  defaultContainerLimits:
-    defaultRequest:
-      # -- The default CPU request for a container if not defined (millicpu)
-      cpu: 1m
-      # -- The default Memory request for a container if not defined
-      memory: 4Mi
-    default:
-      # -- The default CPU limit for a container if not defined (millicpu)
-      cpu: 10m
-      # -- The default Memory limit for a container if not defined
-      memory: 10Mi
-    max:
-      # It's not a good practice to limit the CPU request of a container
-      # This is disabled from the helm chart itself, and shouldn't work.
-      # cpu: 100m
-      # -- The Maximum Memory limit for all containers in the namespace
-      memory: 1Gi
-  namespaceQuotas:
-    requests:
-      # -- Across all pods in a non-terminal state, the sum of CPU requests cannot exceed this value.
-      cpu: 50m
-      # -- Across all pods in a non-terminal state, the sum of memory requests cannot exceed this value.
-      memory: 1Gi
-    # This is not a good pattern to enforce a hard limit on. Pods can always take advantage then of the extra CPU if available.
+defaultContainerLimits:
+  defaultRequest:
+    # -- The default CPU request for a container if not defined (millicpu)
+    cpu: 1m
+    # -- The default Memory request for a container if not defined
+    memory: 4Mi
+  default:
+    # -- The default CPU limit for a container if not defined (millicpu)
+    cpu: 10m
+    # -- The default Memory limit for a container if not defined
+    memory: 10Mi
+  max:
+    # It's not a good practice to limit the CPU request of a container
     # This is disabled from the helm chart itself, and shouldn't work.
-    # limits.cpu: 100m
-    limits:
-      # -- Across all pods in a non-terminal state, the sum of memory limits cannot exceed this value.
-      memory: 1Gi
+    # cpu: 100m
+    # -- The Maximum Memory limit for all containers in the namespace
+    memory: 1Gi
+namespaceQuotas:
+  requests:
+    # -- Across all pods in a non-terminal state, the sum of CPU requests cannot exceed this value.
+    cpu: 50m
+    # -- Across all pods in a non-terminal state, the sum of memory requests cannot exceed this value.
+    memory: 1Gi
+  # This is not a good pattern to enforce a hard limit on. Pods can always take advantage then of the extra CPU if available.
+  # This is disabled from the helm chart itself, and shouldn't work.
+  # limits.cpu: 100m
+  limits:
+    # -- Across all pods in a non-terminal state, the sum of memory limits cannot exceed this value.
+    memory: 1Gi
+  storage:
+    # -- Across all pods in a non-terminal state, the minimum storage requests.
+    min: 0Gi
+    # -- Across all pods in a non-terminal state, the sum of storage limits cannot exceed this value.
+    max: 1Gi

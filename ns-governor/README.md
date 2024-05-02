@@ -13,14 +13,14 @@ A Helm chart for Kubernetes Namespace Creation
 | additional.namespaceLabels | object | `{}` |  |
 | adminGroups | list | `[]` |  |
 | namespace | string | `"root-tenant"` | The name of the namespace where the tenant namespaces will be created |
-| tenantNamespaceResourceLimits.defaultContainerLimits.default.cpu | string | `"10m"` | The default CPU limit for a container if not defined (millicpu) |
-| tenantNamespaceResourceLimits.defaultContainerLimits.default.memory | string | `"10Mi"` | The default Memory limit for a container if not defined |
-| tenantNamespaceResourceLimits.defaultContainerLimits.defaultRequest.cpu | string | `"1m"` | The default CPU request for a container if not defined (millicpu) |
-| tenantNamespaceResourceLimits.defaultContainerLimits.defaultRequest.memory | string | `"4Mi"` | The default Memory request for a container if not defined |
-| tenantNamespaceResourceLimits.defaultContainerLimits.max.memory | string | `"1Gi"` | The Maximum Memory limit for all containers in the namespace |
-| tenantNamespaceResourceLimits.namespaceQuotas.limits.memory | string | `"1Gi"` | Across all pods in a non-terminal state, the sum of memory limits cannot exceed this value. |
-| tenantNamespaceResourceLimits.namespaceQuotas.requests.cpu | string | `"50m"` | Across all pods in a non-terminal state, the sum of CPU requests cannot exceed this value. |
-| tenantNamespaceResourceLimits.namespaceQuotas.requests.memory | string | `"1Gi"` | Across all pods in a non-terminal state, the sum of memory requests cannot exceed this value. |
+| defaultContainerLimits.default.cpu | string | `"10m"` | The default CPU limit for a container if not defined (millicpu) |
+| defaultContainerLimits.default.memory | string | `"10Mi"` | The default Memory limit for a container if not defined |
+| defaultContainerLimits.defaultRequest.cpu | string | `"1m"` | The default CPU request for a container if not defined (millicpu) |
+| defaultContainerLimits.defaultRequest.memory | string | `"4Mi"` | The default Memory request for a container if not defined |
+| defaultContainerLimits.max.memory | string | `"1Gi"` | The Maximum Memory limit for all containers in the namespace |
+| namespaceQuotas.limits.memory | string | `"1Gi"` | Across all pods in a non-terminal state, the sum of memory limits cannot exceed this value. |
+| namespaceQuotas.requests.cpu | string | `"50m"` | Across all pods in a non-terminal state, the sum of CPU requests cannot exceed this value. |
+| namespaceQuotas.requests.memory | string | `"1Gi"` | Across all pods in a non-terminal state, the sum of memory requests cannot exceed this value. |
 
 ## Usage
 

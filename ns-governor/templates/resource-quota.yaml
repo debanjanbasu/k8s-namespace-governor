@@ -13,9 +13,9 @@ metadata:
   namespace: {{ .Values.namespace }}
 spec:
   hard:
-    requests.cpu: {{ .Values.tenantNamespaceResourceLimits.namespaceQuotas.requests.cpu | default "50m" }}
-    requests.memory: {{ .Values.tenantNamespaceResourceLimits.namespaceQuotas.requests.memory | default "1Gi"}}
+    requests.cpu: {{ .Values.namespaceQuotas.requests.cpu | default "50m" }}
+    requests.memory: {{ .Values.namespaceQuotas.requests.memory | default "1Gi"}}
     # This is not a good pattern to enforce a hard limit on. Pods can always take advantage then of the extra CPU if available.
     # limits.cpu: "2"
-    limits.memory: {{ .Values.tenantNamespaceResourceLimits.namespaceQuotas.limits.memory | default "1Gi" }}
-    requests.storage: "2Gi"
+    limits.memory: {{ .Values.namespaceQuotas.limits.memory | default "1Gi" }}
+    requests.storage: {{ .Values.namespaceQuotas.storage.max | default "1Gi" }}

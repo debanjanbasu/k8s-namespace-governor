@@ -21,66 +21,72 @@
         "adminGroups": {
             "type": "array"
         },
-        "namespace": {
-            "type": "string"
-        },
-        "tenantNamespaceResourceLimits": {
+        "defaultContainerLimits": {
             "properties": {
-                "defaultContainerLimits": {
+                "default": {
                     "properties": {
-                        "default": {
-                            "properties": {
-                                "cpu": {
-                                    "type": "string"
-                                },
-                                "memory": {
-                                    "type": "string"
-                                }
-                            },
-                            "type": "object"
+                        "cpu": {
+                            "type": "string"
                         },
-                        "defaultRequest": {
-                            "properties": {
-                                "cpu": {
-                                    "type": "string"
-                                },
-                                "memory": {
-                                    "type": "string"
-                                }
-                            },
-                            "type": "object"
-                        },
-                        "max": {
-                            "properties": {
-                                "memory": {
-                                    "type": "string"
-                                }
-                            },
-                            "type": "object"
+                        "memory": {
+                            "type": "string"
                         }
                     },
                     "type": "object"
                 },
-                "namespaceQuotas": {
+                "defaultRequest": {
                     "properties": {
-                        "limits": {
-                            "properties": {
-                                "memory": {
-                                    "type": "string"
-                                }
-                            },
-                            "type": "object"
+                        "cpu": {
+                            "type": "string"
                         },
-                        "requests": {
-                            "properties": {
-                                "cpu": {
-                                    "type": "string"
-                                },
-                                "memory": {
-                                    "type": "string"
-                                }
-                            },
-                            "type": "object"
+                        "memory": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "max": {
+                    "properties": {
+                        "memory": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "namespace": {
+            "type": "string"
+        },
+        "namespaceQuotas": {
+            "properties": {
+                "limits": {
+                    "properties": {
+                        "memory": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "requests": {
+                    "properties": {
+                        "cpu": {
+                            "type": "string"
+                        },
+                        "memory": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "storage": {
+                    "properties": {
+                        "max": {
+                            "type": "string"
+                        },
+                        "min": {
+                            "type": "string"
                         }
                     },
                     "type": "object"

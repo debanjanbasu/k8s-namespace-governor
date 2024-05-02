@@ -16,19 +16,19 @@ spec:
   limits:
   - type: Container
     defaultRequest:
-      cpu: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.defaultRequest.cpu | default "1m" }}
-      memory: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.defaultRequest.memory | default "4Mi" }}
+      cpu: {{ .Values.defaultContainerLimits.defaultRequest.cpu | default "1m" }}
+      memory: {{ .Values.defaultContainerLimits.defaultRequest.memory | default "4Mi" }}
     default:
-      cpu: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.default.cpu | default "10m" }}
-      memory: {{ .Values.tenantNamespaceResourceLimits.defaultContainerLimits.default.memory | default "10Mi" }}
+      cpu: {{ .Values.defaultContainerLimits.default.cpu | default "10m" }}
+      memory: {{ .Values.defaultContainerLimits.default.memory | default "10Mi" }}
     min:
       cpu: 0m
       memory: 0Mi
     max:
       # Memory cannot exceed the limits set in the namespace quotas, a pod cannot exceed the budget allocated by the namespace
-      memory: {{ min .Values.tenantNamespaceResourceLimits.defaultContainerLimits.max.memory .Values.tenantNamespaceResourceLimits.namespaceQuotas.limits.memory | default "1Gi" }}
+      memory: {{ min .Values.defaultContainerLimits.max.memory .Values.namespaceQuotas.limits.memory | default "1Gi" }}
   - type: PersistentVolumeClaim
     max:
-      storage: 2Gi
+      storage: {{ .Values.namespaceQuotas.storage.max | default "1Gi" }}
     min:
-      storage: 0Gi
+      storage: {{ .Values.namespaceQuotas.storage.min | default "0Gi" }}
