@@ -4,6 +4,8 @@ metadata:
   labels:
     kubernetes.io/metadata.name: {{ .Values.namespace }}
     kubernetes.io/created-by: {{ .Chart.Name }}
+    # TODO: Need to add labels to allow for filtering from Vault Operator
   annotations:
+    # TODO: Need to add OpenShift "Project" specific annotations
     argocd.argoproj.io/sync-wave: "-1"
   name: {{ .Values.namespace }}
